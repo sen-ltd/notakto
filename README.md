@@ -151,3 +151,10 @@ npm run literature # rebuild src/results.json from runs/
 ## License
 
 MIT. See [LICENSE](LICENSE).
+
+<!-- sen-publish:links -->
+## Links
+
+- 🌐 Demo: https://sen.ltd/portfolio/notakto/
+- 📝 記事: https://qiita.com/sen-ltd/items/c5b0177a1c333f276cfc
+<!-- /sen-publish:links -->
