@@ -1,0 +1,424 @@
+{
+ "node": "v26.3.0",
+ "classes": {
+  "listed": 102,
+  "burnside": 102,
+  "live": 46
+ },
+ "monoid": {
+  "elements": [
+   "1",
+   "a",
+   "b",
+   "c",
+   "d",
+   "ab",
+   "ac",
+   "ad",
+   "b²",
+   "bc",
+   "bd",
+   "c²",
+   "ab²",
+   "abc",
+   "abd",
+   "ac²",
+   "bc²",
+   "abc²"
+  ],
+  "rules": [
+   "a² → 1",
+   "b³ → b",
+   "b²c → c",
+   "c³ → ac²",
+   "b²d → d",
+   "cd → ad",
+   "d² → c²"
+  ],
+  "criticalPairs": 21,
+  "P": [
+   "a",
+   "b²",
+   "bc",
+   "c²"
+  ]
+ },
+ "proof": {
+  "ok": true,
+  "states": 285480,
+  "kinds": 15,
+  "ms": 5335
+ },
+ "kinds": [
+  {
+   "value": "c",
+   "options": [
+    "1",
+    "c²"
+   ],
+   "classes": 1
+  },
+  {
+   "value": "1",
+   "options": [
+    "a",
+    "b",
+    "ad"
+   ],
+   "classes": 2
+  },
+  {
+   "value": "c²",
+   "options": [
+    "b"
+   ],
+   "classes": 1
+  },
+  {
+   "value": "ad",
+   "options": [
+    "1",
+    "a",
+    "b",
+    "d",
+    "ab"
+   ],
+   "classes": 1
+  },
+  {
+   "value": "b",
+   "options": [
+    "1",
+    "a",
+    "ab"
+   ],
+   "classes": 4
+  },
+  {
+   "value": "b",
+   "options": [
+    "1",
+    "a",
+    "d"
+   ],
+   "classes": 1
+  },
+  {
+   "value": "a",
+   "options": [
+    "1",
+    "d",
+    "ab"
+   ],
+   "classes": 1
+  },
+  {
+   "value": "a",
+   "options": [
+    "1",
+    "b",
+    "d",
+    "ab"
+   ],
+   "classes": 1
+  },
+  {
+   "value": "a",
+   "options": [
+    "1",
+    "b",
+    "d"
+   ],
+   "classes": 1
+  },
+  {
+   "value": "b",
+   "options": [
+    "1",
+    "a"
+   ],
+   "classes": 10
+  },
+  {
+   "value": "ab",
+   "options": [
+    "1",
+    "a",
+    "b"
+   ],
+   "classes": 5
+  },
+  {
+   "value": "d",
+   "options": [
+    "1",
+    "a",
+    "b",
+    "ab"
+   ],
+   "classes": 3
+  },
+  {
+   "value": "a",
+   "options": [
+    "1",
+    "b"
+   ],
+   "classes": 8
+  },
+  {
+   "value": "1",
+   "options": [
+    "a",
+    "b",
+    "ab"
+   ],
+   "classes": 1
+  },
+  {
+   "value": "a",
+   "options": [
+    "1"
+   ],
+   "classes": 6
+  }
+ ],
+ "image": 18,
+ "indistinguishable": 0,
+ "automorphisms": [
+  {
+   "map": "a→a b→b c→c d→d",
+   "changedEntries": 0,
+   "proofOk": true
+  },
+  {
+   "map": "a→a b→b c→c d→ad",
+   "changedEntries": 4,
+   "proofOk": true
+  },
+  {
+   "map": "a→a b→b c→c d→bd",
+   "changedEntries": 4,
+   "proofOk": true
+  },
+  {
+   "map": "a→a b→b c→c d→abd",
+   "changedEntries": 4,
+   "proofOk": true
+  }
+ ],
+ "automorphismMs": 1474,
+ "mutations": {
+  "tried": 782,
+  "caught": 782,
+  "missed": 0,
+  "ms": 722
+ },
+ "valueCounts": {
+  "1": {
+   "all": 59,
+   "live": 3
+  },
+  "c": {
+   "all": 1,
+   "live": 1
+  },
+  "c²": {
+   "all": 1,
+   "live": 1
+  },
+  "ad": {
+   "all": 1,
+   "live": 1
+  },
+  "b": {
+   "all": 15,
+   "live": 15
+  },
+  "a": {
+   "all": 17,
+   "live": 17
+  },
+  "ab": {
+   "all": 5,
+   "live": 5
+  },
+  "d": {
+   "all": 3,
+   "live": 3
+  }
+ },
+ "oneBoard": {
+  "winningFirstMoves": [
+   4
+  ],
+  "knight": {
+   "someWins": true,
+   "everyWins": true,
+   "positions": 81,
+   "choices": 8,
+   "killing": 32
+  },
+  "rotation": {
+   "first": 8,
+   "allWin": true,
+   "lines": 440
+  }
+ },
+ "emptyBoards": [
+  {
+   "n": 1,
+   "value": "c",
+   "p": false,
+   "winningFirst": [
+    "centre"
+   ]
+  },
+  {
+   "n": 2,
+   "value": "c²",
+   "p": true,
+   "winningFirst": []
+  },
+  {
+   "n": 3,
+   "value": "ac²",
+   "p": false,
+   "winningFirst": [
+    "corner",
+    "edge",
+    "centre"
+   ]
+  },
+  {
+   "n": 4,
+   "value": "c²",
+   "p": true,
+   "winningFirst": []
+  },
+  {
+   "n": 5,
+   "value": "ac²",
+   "p": false,
+   "winningFirst": [
+    "corner",
+    "edge",
+    "centre"
+   ]
+  },
+  {
+   "n": 6,
+   "value": "c²",
+   "p": true,
+   "winningFirst": []
+  }
+ ],
+ "mimicry": {
+  "symmetricP": 26,
+  "symmetricN": 20,
+  "fromEmpty": [
+   {
+    "cell": 0,
+    "copyWins": false
+   },
+   {
+    "cell": 1,
+    "copyWins": false
+   },
+   {
+    "cell": 4,
+    "copyWins": true
+   }
+  ]
+ },
+ "noMimic": {
+  "value": "ab",
+  "winning": [
+   [
+    0,
+    3
+   ],
+   [
+    0,
+    5
+   ],
+   [
+    0,
+    7
+   ],
+   [
+    1,
+    8
+   ]
+  ],
+  "mimicMoveValue": "1"
+ },
+ "grundyByValue": {
+  "1": [
+   0
+  ],
+  "c": [
+   1
+  ],
+  "c²": [
+   0
+  ],
+  "ad": [
+   5
+  ],
+  "b": [
+   2
+  ],
+  "a": [
+   1
+  ],
+  "ab": [
+   3
+  ],
+  "d": [
+   4
+  ]
+ },
+ "grundyMax": 5,
+ "tame": [
+  {
+   "boards": 1,
+   "sums": 46,
+   "wrong": 2,
+   "example": [
+    0
+   ]
+  },
+  {
+   "boards": 2,
+   "sums": 1081,
+   "wrong": 41,
+   "example": [
+    0,
+    0
+   ]
+  },
+  {
+   "boards": 3,
+   "sums": 17296,
+   "wrong": 638,
+   "example": [
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "boards": 4,
+   "sums": 211876,
+   "wrong": 8789,
+   "example": [
+    0,
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "tameMs": 67
+}

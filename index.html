@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notakto — X-only misère tic-tac-toe against a perfect player</title>
+    <meta
+      name="description"
+      content="Notakto in the browser: both players draw X's on several tic-tac-toe boards, and whoever completes the last three-in-a-row loses. The computer plays perfectly with Plambeck and Whitehead's 18-element misère quotient, re-derived here with a finite proof that it decides every sum of boards."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23151412'/%3E%3Cpath d='M8 8 L24 24 M24 8 L8 24' stroke='%23e8a15a' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Notakto <span>X-only tic-tac-toe, misère</span></h1>
+        <p class="sub">
+          Both players draw <strong>X</strong>'s. Pick any board, mark any empty cell. A board with three in a row
+          is dead. <strong>Whoever kills the last board loses.</strong> The computer plays perfectly: every board
+          gets a value in an 18-element monoid, and a position is a second-player win exactly when the product of
+          the values lands in <strong class="h">P = {a, b², bc, c²}</strong>. With hints on, each cell shows
+          whether the move wins (<strong class="win-t">W</strong>) or loses (<strong class="lose-t">L</strong>).
+        </p>
+      </header>
+
+      <div id="wrap">
+        <div class="stage">
+          <div class="controls">
+            <label class="sel">boards
+              <select id="nSel">
+                <option>1</option><option>2</option><option selected>3</option>
+                <option>4</option><option>5</option><option>6</option>
+              </select>
+            </label>
+            <label class="sel">you move
+              <select id="youSel">
+                <option value="first">first</option>
+                <option value="second">second</option>
+              </select>
+            </label>
+            <label class="sel chk"><input type="checkbox" id="hints" /> hints</label>
+            <button id="undo">Undo</button>
+            <button id="newgame" class="primary">New game</button>
+          </div>
+          <div id="boards"></div>
+          <div id="product"></div>
+          <div id="status" aria-live="polite"></div>
+        </div>
+        <div class="side">
+          <h3>the monoid Q</h3>
+          <div class="panel" id="monoid"></div>
+          <h3>checked</h3>
+          <div class="panel" id="checked"></div>
+          <h3>the 2013 note, re-checked</h3>
+          <div class="panel" id="checks"></div>
+        </div>
+      </div>
+
+      <section class="notes">
+        <h2>The dictionary</h2>
+        <p>
+          The 46 boards without a line, up to rotation and reflection, with their values. Dead boards are 1.
+          Boards in play are outlined.
+        </p>
+        <div id="dict"></div>
+        <h2>Why a monoid</h2>
+        <p>
+          In normal play (last move wins) a sum of games is solved by Sprague–Grundy: each board is worth a
+          nim-heap and the heaps add by XOR. In misère play that breaks: one empty board is worth a heap of 1 in
+          normal play, and misère nim says a single heap of 1 is a loss for the player to move — but the empty
+          board is a win (take the centre). Plambeck's misère quotients replace the nim-heaps by elements of a
+          finite commutative monoid that is specific to the game. For 3×3 Notakto it has 18 elements.
+        </p>
+        <h2>How it was checked</h2>
+        <p>
+          The 18 elements come from the seven relations by Knuth–Bendix completion (the relations are already
+          confluent). The dictionary is the one printed in the note. The proof that it decides <em>every</em> sum
+          is finite: whether a sum is P depends only on the product and, for each kind of board present, the
+          product of the rest, so a breadth-first walk over those states (285,480 of them) checks all sums of all
+          sizes at once. Plain game search on every sum of up to six boards agrees. Change any one of the 46
+          live entries to any other element and the proof fails; the only other dictionaries that work rename
+          <em>d</em>.
+        </p>
+      </section>
+
+      <footer>
+        <p>
+          Built by <a href="https://sen.ltd/">SEN LLC</a>. TypeScript, no runtime dependencies. Source:
+          T. E. Plambeck, G. Whitehead, <a href="https://arxiv.org/abs/1301.1672">The Secrets of Notakto: Winning at
+          X-only Tic-Tac-Toe</a> (2013).
+          <a href="https://github.com/sen-ltd/notakto">Source</a>.
+        </p>
+      </footer>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

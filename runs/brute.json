@@ -1,0 +1,56 @@
+{
+ "node": "v26.3.0",
+ "liveClasses": 46,
+ "rows": [
+  {
+   "boards": 1,
+   "sums": 46,
+   "pPositions": 18,
+   "mismatches": 0,
+   "ms": 1
+  },
+  {
+   "boards": 2,
+   "sums": 1081,
+   "pPositions": 213,
+   "mismatches": 0,
+   "ms": 3
+  },
+  {
+   "boards": 3,
+   "sums": 17296,
+   "pPositions": 3282,
+   "mismatches": 0,
+   "ms": 46
+  },
+  {
+   "boards": 4,
+   "sums": 211876,
+   "pPositions": 42423,
+   "mismatches": 0,
+   "ms": 432
+  },
+  {
+   "boards": 5,
+   "sums": 2118760,
+   "pPositions": 352876,
+   "mismatches": 0,
+   "ms": 6197
+  },
+  {
+   "boards": 6,
+   "sums": 18009460,
+   "pPositions": 3214952,
+   "mismatches": 0,
+   "ms": 64752
+  },
+  {
+   "boards": 7,
+   "sums": 133784560,
+   "pPositions": 21167844,
+   "mismatches": 0,
+   "ms": 722113
+  }
+ ],
+ "ms": 793552
+}

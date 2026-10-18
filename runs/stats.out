@@ -1,0 +1,3 @@
+proof { ok: true, states: 285480, kinds: 15 } 5113 ms
+aut 4 mutations 782 782
+tame 1:2/46 2:41/1081 3:638/17296 4:8789/211876

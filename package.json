@@ -1,0 +1,24 @@
+{
+  "name": "notakto",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Notakto (X-only misère tic-tac-toe on several boards) against a perfect player, and the 2013 Plambeck–Whitehead misère quotient re-derived: the 18-element monoid, its 102-entry dictionary, and a finite proof that it decides every sum of boards. TypeScript, no runtime deps.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "serve": "vite preview --port 4173",
+    "test": "vitest run",
+    "stats": "node tools/stats.mts",
+    "brute": "node tools/brute.mts",
+    "literature": "node tools/literature.mts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.1",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.5"
+  },
+  "license": "MIT"
+}

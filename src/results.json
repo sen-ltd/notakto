@@ -1,0 +1,260 @@
+{
+ "claims": [
+  {
+   "claim": "102 non-isomorphic ways of arranging zero to nine X's",
+   "result": "yes: 102 classes, Burnside gives 102; 46 of them have no line",
+   "ok": true
+  },
+  {
+   "claim": "Q = ⟨a,b,c,d | a²=1, b³=b, b²c=c, c³=ac², b²d=d, cd=ad, d²=c²⟩ has eighteen elements, the ones listed",
+   "result": "yes: the seven relations are already a complete rewriting system (21 critical pairs, none new); 18 normal forms",
+   "ok": true
+  },
+  {
+   "claim": "multiply the dictionary values; the sum is a P-position iff the product is in P = {a, b², bc, c²}",
+   "result": "yes, for sums of any size: a finite check over 285,480 states (15 kinds of board) proves it; plain search agrees on all 154,143,079 sums of up to 7 boards (0 mismatches)",
+   "ok": true
+  },
+  {
+   "claim": "Q is the misère quotient",
+   "result": "yes: the products reach all 18 elements and no two elements behave alike in every context (0 pairs)",
+   "ok": true
+  },
+  {
+   "claim": "positions with too many completed rows are all assigned the identity",
+   "result": "yes: all 56 dead boards are 1 (and 3 live ones too)",
+   "ok": true
+  },
+  {
+   "claim": "the dictionary (Figure 7)",
+   "result": "forced: each of the 782 one-entry changes breaks the proof. (Q, P) has 4 automorphisms; 3 of them rename d and relabel the 4 d/ad entries, and those dictionaries work too",
+   "ok": true
+  },
+  {
+   "claim": "one board: the first player wins by playing in the centre",
+   "result": "yes; the empty board is c",
+   "ok": true
+  },
+  {
+   "claim": "…then wherever the second player plays, a knight's move away from that",
+   "result": "yes, as long as the knight's move does not complete a line (32 times one of the two would); whenever two such moves exist (8 times) both win",
+   "ok": true
+  },
+  {
+   "claim": "any move other than the centre loses: reply diametrically opposite, then rotate by 180°",
+   "result": "yes: centre is the only winning first move, and the rotation reply wins against all 8 other openings and every continuation",
+   "ok": true
+  },
+  {
+   "claim": "two empty boards: c², a second-player win",
+   "result": "yes",
+   "ok": true
+  },
+  {
+   "claim": "after a centre opening, copying it on the other board wins (c⁴ = c²)",
+   "result": "yes; after a corner or edge opening the copy loses (1·1 = 1). Of the 46 live boards, 26 are P when doubled",
+   "ok": true
+  },
+  {
+   "claim": "Figure 5 is an N-position and the copy (top-right of the right board) loses",
+   "result": "yes: ab, the copy makes 1. The winning replies: middle-left of the left board, middle-right of the left board, bottom-middle of the left board, bottom-right of the right board (the last one completes the diagonal)",
+   "ok": true
+  },
+  {
+   "claim": "the empty board is {2+, 0} and nim-heap 4 occurs as a single board (footnote)",
+   "result": "not checked (misère canonical forms are not implemented); the three boards with Grundy value 4 are exactly the ones valued d",
+   "ok": null
+  }
+ ],
+ "monoid": {
+  "elements": [
+   "1",
+   "a",
+   "b",
+   "c",
+   "d",
+   "ab",
+   "ac",
+   "ad",
+   "b²",
+   "bc",
+   "bd",
+   "c²",
+   "ab²",
+   "abc",
+   "abd",
+   "ac²",
+   "bc²",
+   "abc²"
+  ],
+  "rules": [
+   "a² → 1",
+   "b³ → b",
+   "b²c → c",
+   "c³ → ac²",
+   "b²d → d",
+   "cd → ad",
+   "d² → c²"
+  ],
+  "criticalPairs": 21,
+  "P": [
+   "a",
+   "b²",
+   "bc",
+   "c²"
+  ]
+ },
+ "proof": {
+  "ok": true,
+  "states": 285480,
+  "kinds": 15,
+  "ms": 5335
+ },
+ "brute": [
+  {
+   "boards": 1,
+   "sums": 46,
+   "pPositions": 18,
+   "mismatches": 0,
+   "ms": 1
+  },
+  {
+   "boards": 2,
+   "sums": 1081,
+   "pPositions": 213,
+   "mismatches": 0,
+   "ms": 3
+  },
+  {
+   "boards": 3,
+   "sums": 17296,
+   "pPositions": 3282,
+   "mismatches": 0,
+   "ms": 46
+  },
+  {
+   "boards": 4,
+   "sums": 211876,
+   "pPositions": 42423,
+   "mismatches": 0,
+   "ms": 432
+  },
+  {
+   "boards": 5,
+   "sums": 2118760,
+   "pPositions": 352876,
+   "mismatches": 0,
+   "ms": 6197
+  },
+  {
+   "boards": 6,
+   "sums": 18009460,
+   "pPositions": 3214952,
+   "mismatches": 0,
+   "ms": 64752
+  },
+  {
+   "boards": 7,
+   "sums": 133784560,
+   "pPositions": 21167844,
+   "mismatches": 0,
+   "ms": 722113
+  }
+ ],
+ "emptyBoards": [
+  {
+   "n": 1,
+   "value": "c",
+   "p": false,
+   "winningFirst": [
+    "centre"
+   ]
+  },
+  {
+   "n": 2,
+   "value": "c²",
+   "p": true,
+   "winningFirst": []
+  },
+  {
+   "n": 3,
+   "value": "ac²",
+   "p": false,
+   "winningFirst": [
+    "corner",
+    "edge",
+    "centre"
+   ]
+  },
+  {
+   "n": 4,
+   "value": "c²",
+   "p": true,
+   "winningFirst": []
+  },
+  {
+   "n": 5,
+   "value": "ac²",
+   "p": false,
+   "winningFirst": [
+    "corner",
+    "edge",
+    "centre"
+   ]
+  },
+  {
+   "n": 6,
+   "value": "c²",
+   "p": true,
+   "winningFirst": []
+  }
+ ],
+ "tame": [
+  {
+   "boards": 1,
+   "sums": 46,
+   "wrong": 2
+  },
+  {
+   "boards": 2,
+   "sums": 1081,
+   "wrong": 41
+  },
+  {
+   "boards": 3,
+   "sums": 17296,
+   "wrong": 638
+  },
+  {
+   "boards": 4,
+   "sums": 211876,
+   "wrong": 8789
+  }
+ ],
+ "grundyByValue": {
+  "1": [
+   0
+  ],
+  "c": [
+   1
+  ],
+  "c²": [
+   0
+  ],
+  "ad": [
+   5
+  ],
+  "b": [
+   2
+  ],
+  "a": [
+   1
+  ],
+  "ab": [
+   3
+  ],
+  "d": [
+   4
+  ]
+ }
+}
